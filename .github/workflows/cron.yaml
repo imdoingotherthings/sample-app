@@ -1,0 +1,14 @@
+name: call-sample-api
+on:
+  push: 
+    branches:
+      - master
+jobs:
+  call-the-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Printing message'
+        run: echo calling api now...
+      - name: Call the next js API on Vercel
+        run: curl https://sample-app-gvewe6zkt-imdoingotherthings.vercel.app/api/hello
